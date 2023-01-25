@@ -25,3 +25,17 @@ def exp_two(b, n)
     end
     b * (exp_two(b, (n-1)/2) ** 2)
 end
+
+def deep_dup(arr)
+    return [] if arr.length == 0
+
+    arr_new = []
+    arr.each do |ele|
+        if ele.is_a?(Array)
+            arr_new << deep_dup(ele)
+        else
+            arr_new << ele
+        end
+    end
+    arr_new
+end
