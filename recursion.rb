@@ -39,3 +39,11 @@ def deep_dup(arr)
     end
     arr_new
 end
+
+def fibonacci(n)
+    return [1, 1].take(n) if n < 3
+    prev_row = fibonacci(n-1)
+    prev_row << prev_row[-2] + prev_row[-1]
+end
+
+
