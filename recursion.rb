@@ -11,3 +11,17 @@ end
 def iter_arr(arr)
     arr.inject { |acc, ele| acc + ele }
 end
+
+def exp_one(b, n)
+    return 1 if n == 0
+    b * exp_one(b, n-1 )
+end
+
+def exp_two(b, n)
+    return 1 if n == 0
+    return b if n == 1
+    if n.even?
+        return exp_two(b, n/2) ** 2
+    end
+    b * (exp_two(b, (n-1)/2) ** 2)
+end
