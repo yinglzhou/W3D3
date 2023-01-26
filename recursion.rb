@@ -51,19 +51,16 @@ def bsearch(arr, target)
     return [] if arr == []
     check = arr.length/2
 
-    if arr[check] != target
-        if arr.length == 1
-            return "not found" if arr[check] != target
-        else
-        
+    if arr[check] == target
+        return "found"
+    else
+        if arr.length > 1
             if arr[check] < target 
-                bsearch(arr[0...check], target)
+                bsearch(arr[0..check], target)
             else
-                bsearch(arr[check+1.. -1], target)
+                bsearch(arr[check+1..-1], target)
             end
-
         end
-
+        return "not found"
     end
-
 end
